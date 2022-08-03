@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.scaler_task.pojo.Videos" />
+
+        <variable
+            name="model"
+            type="com.example.scaler_task.viewModel.MainViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/title"
+            android:text="@string/title"
+            android:textColor="@color/purple_500"
+            app:layout_constraintLeft_toLeftOf="@id/title"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="70dp"
+            android:textColor="@color/purple_500"
+            android:textColorHint="@color/teal_700"
+            android:hint="@string/enter_title"
+            android:text="@={model.title}"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/imageUrl"
+            android:text="@string/image_url"
+            android:textColor="@color/purple_500"
+            app:layout_constraintLeft_toLeftOf="@id/imageUrl"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/imageUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/purple_500"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="30dp"
+            android:textColorHint="@color/teal_700"
+            android:hint="@string/enter_image_url"
+            android:text="@={model.imageUrl}"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+        <TextView
+            android:layout_width="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/videoUrl"
+            android:text="@string/video_url"
+            android:textColor="@color/purple_500"
+            app:layout_constraintLeft_toLeftOf="@id/videoUrl"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/videoUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/purple_500"
+            android:textColorHint="@color/teal_700"
+            android:hint="@string/enter_video_url"
+            android:text="@={model.videoUrl}"
+            app:layout_constraintTop_toBottomOf="@+id/imageUrl" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginBottom="50dp"
+            android:alpha="0.5"
+            android:text="@string/submit"
+            android:id="@+id/submitButton"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

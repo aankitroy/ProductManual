@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Khabri_Task</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="enter_title">Enter Title</string>
+    <string name="enter_image_url">Enter image url</string>
+    <string name="enter_video_url">Enter video url</string>
+    <string name="submit">Submit</string>
+    <string name="add_item">add item</string>
+    <string name="title">Title</string>
+    <string name="image_url">Image url</string>
+    <string name="video_url">Video Url</string>
+    <string name="instruct">Press Button to ask question</string>
+    <string name="productName">Air Purifier C5659/20 Voice Assistant</string>
+    <string name="seeQuestions">Click to See Questions</string>
+
+</resources>
