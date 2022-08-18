@@ -13,5 +13,8 @@
     <string name="instruct">Press Button to ask question</string>
     <string name="productName">Air Purifier C5659/20 Voice Assistant</string>
     <string name="seeQuestions">Click to See Questions</string>
+    <string name="philips">PHILIPS</string>
+    <string name="audioManual">Audio Manual</string>
+
 
 </resources>
