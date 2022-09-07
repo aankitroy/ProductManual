@@ -62,13 +62,15 @@
 
         <ImageView
             android:id="@+id/mic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="57dp"
+            android:scaleType="fitCenter"
+            android:translationZ="4dp"
             app:layout_constraintBottom_toBottomOf="@+id/listenContainer"
-            app:layout_constraintEnd_toEndOf="@+id/listenContainer"
-            app:layout_constraintStart_toStartOf="@+id/listenContainer"
+            app:layout_constraintRight_toRightOf="@+id/listenContainer"
+            app:layout_constraintLeft_toLeftOf="@+id/listenContainer"
             app:layout_constraintTop_toTopOf="@+id/listenContainer"
-            app:srcCompat="@drawable/black_mic" />
+            android:src="@drawable/ic_black_mic" />
 
         <ImageView
             android:id="@+id/instruct_place_holder"

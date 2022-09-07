@@ -44,8 +44,9 @@ class KhabriTaskActivity : AppCompatActivity(), RecognitionListener {
         binding.listenContainer.setOnClickListener {
             if (checkPermission()) {
                 binding.startMessage.setImageResource(R.drawable.askmestopmessage)
-                binding.mic.setImageResource(R.drawable.red_mic)
-               // binding.answer.text = ""
+                binding.mic.setColorFilter(ContextCompat.getColor(this,
+                    R.color.red))
+                // binding.answer.text = ""
                 textToSpeech.stop()
                 binding.juicerMixerDesignRef.visibility = View.VISIBLE
                 binding.instructPlaceHolder.visibility = View.VISIBLE
@@ -170,6 +171,8 @@ class KhabriTaskActivity : AppCompatActivity(), RecognitionListener {
 
     override fun onError(error: Int) {
         Log.d("zzz", "error : " + error)
+        binding.mic.setColorFilter(ContextCompat.getColor(this,
+            R.color.black))
     }
 
 
@@ -179,7 +182,8 @@ class KhabriTaskActivity : AppCompatActivity(), RecognitionListener {
 
     override fun onResults(results: Bundle) {
         binding.startMessage.setImageResource(R.drawable.askmeanything)
-        binding.mic.setImageResource(R.drawable.black_mic)
+        binding.mic.setColorFilter(ContextCompat.getColor(this,
+            R.color.black))
         val stringArrayList: ArrayList<String>? =
             results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
         if (stringArrayList != null) {
