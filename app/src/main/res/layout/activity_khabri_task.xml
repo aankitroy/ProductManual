@@ -112,6 +112,36 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lgSwitch" />
 
+        <ImageView
+            android:id="@+id/questionbase"
+            android:layout_width="379dp"
+            android:layout_height="372dp"
+            android:layout_marginTop="72dp"
+            android:visibility="gone"
+            android:background="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/instruct_place_holder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="351dp"
+            android:layout_height="338dp"
+            android:visibility="gone"
+            android:fontFamily="sans-serif"
+            android:scrollbars="vertical"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/questionbase"
+            app:layout_constraintEnd_toEndOf="@+id/questionbase"
+            app:layout_constraintStart_toStartOf="@+id/questionbase"
+            app:layout_constraintTop_toTopOf="@+id/questionbase"
+            android:text="Clean juicer by Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

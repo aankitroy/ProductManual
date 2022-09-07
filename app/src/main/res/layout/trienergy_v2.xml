@@ -12,55 +12,14 @@
     >
 
     <ImageView
-        android:id="@+id/elipse"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="320dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ellipse1" />
-
-    <ImageView
-        android:id="@+id/big_elipse"
-        android:layout_width="409dp"
-        android:layout_height="1188dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/big_ellipse" />
-
-    <ImageView
         android:id="@+id/productmixer"
         android:layout_width="165dp"
         android:layout_height="148dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="200dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toStartOf="@+id/elipse"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/productmixer" />
-
-    <ImageView
-        android:id="@+id/prodserialNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productmixer"
-        app:srcCompat="@drawable/prodserialno" />
-
-    <ImageView
-        android:id="@+id/juicermixer"
-        android:layout_width="180dp"
-        android:layout_height="23dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.19"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productmixer"
-        app:srcCompat="@drawable/juicermixer" />
+        app:srcCompat="@drawable/usha_mixer" />
 
     <TextView
         android:id="@+id/question"
@@ -68,10 +27,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="72dp"
-        android:layout_marginRight="4dp"
         android:maxLines="2"
         android:text="@{question_text}"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         android:typeface="sans"
@@ -81,31 +39,63 @@
 
     <ImageView
         android:id="@+id/answerbase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:visibility="gone"
+        android:layout_width="335dp"
+        android:layout_height="285dp"
+        android:background="@color/dark_brown"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productmixer"
-        app:srcCompat="@drawable/rectanglev2" />
+        app:layout_constraintTop_toBottomOf="@+id/question"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/answer"
-        android:layout_width="283dp"
-        android:layout_height="228dp"
-        android:visibility="gone"
+        android:layout_width="315dp"
+        android:layout_height="270dp"
         android:fontFamily="sans-serif"
         android:scrollbars="vertical"
-        tools:text="Clean juicer by Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
-"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textStyle="bold"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/answerbase"
         app:layout_constraintEnd_toEndOf="@+id/answerbase"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="@+id/answerbase"
-        app:layout_constraintTop_toTopOf="@+id/answerbase" />
+        app:layout_constraintTop_toTopOf="@+id/answerbase"
+        app:layout_constraintVertical_bias="0.178"
+        tools:text="Clean juicer by Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+" />
+
+    <ImageView
+        android:id="@+id/usha_product"
+        android:layout_width="161dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="136dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/productmixer"
+        app:srcCompat="@drawable/usha_product_name" />
+
+    <ImageView
+        android:id="@+id/leftcircle"
+        android:layout_width="54dp"
+        android:layout_height="178dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="736dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/leftcircle" />
+
+    <ImageView
+        android:id="@+id/rightcircle"
+        android:layout_width="69dp"
+        android:layout_height="259dp"
+        android:layout_marginBottom="616dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/rightcircle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

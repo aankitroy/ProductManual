@@ -7,16 +7,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:animateLayoutChanges="true"
-        android:background="@drawable/background">
+        android:background="@drawable/usha_background">
 
         <!--Remove margin Bottom to reflect design phase 1-->
 
         <include
-            android:id="@+id/juicer_mixer_design_ref"
-            layout="@layout/juicer_mixer_design"
+            android:id="@+id/trienergy_ref"
+            layout="@layout/trienergy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="550dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -25,8 +26,8 @@
             app:layout_constraintVertical_bias="0.498" />
 
         <include
-            android:id="@+id/juicer_mixer_design_ref_v2"
-            layout="@layout/juicer_mixer_design_v2"
+            android:id="@+id/trienergy_ref_v2"
+            layout="@layout/trienergy_v2"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -40,15 +41,15 @@
             android:layout_marginEnd="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/searchicon" />
+            app:srcCompat="@drawable/searchiconwhite" />
 
         <ImageView
             android:id="@+id/serviceman"
-            android:layout_width="267dp"
+            android:layout_width="184dp"
             android:layout_height="308dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/serviceman1" />
+            app:srcCompat="@drawable/ushahumanlogo" />
 
         <ImageView
             android:id="@+id/listenContainer"
@@ -79,17 +80,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.101"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/rectangle3" />
+            android:background="@color/dark_brown"/>
 
         <ImageView
             android:id="@+id/start_message"
-            android:layout_width="224dp"
-            android:layout_height="140dp"
+            android:layout_width="246dp"
+            android:layout_height="162dp"
             app:layout_constraintBottom_toBottomOf="@+id/instruct_place_holder"
             app:layout_constraintEnd_toEndOf="@+id/instruct_place_holder"
             app:layout_constraintStart_toStartOf="@+id/instruct_place_holder"
             app:layout_constraintTop_toTopOf="@+id/instruct_place_holder"
-            app:srcCompat="@drawable/askmeanything" />
+            app:srcCompat="@drawable/askmewhite" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/lgSwitch"
@@ -107,7 +108,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="60dp"
             android:text="English"
-            android:textColor="@color/dark_grey"
+            android:textColor="@color/white"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lgSwitch" />

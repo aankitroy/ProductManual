@@ -10,6 +10,7 @@ import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
+import android.speech.tts.Voice
 import android.text.method.ScrollingMovementMethod
 import android.util.Log
 import android.view.View
@@ -52,6 +53,8 @@ class KhabriTaskActivity : AppCompatActivity(), RecognitionListener {
                 binding.startMessage.visibility = View.VISIBLE
                 binding.juicerMixerDesignRefV2.root.visibility = View.GONE
                 binding.juicerMixerDesignRefV2.question.text = ""
+                binding.question.visibility = View.GONE
+                binding.questionbase.visibility = View.GONE
                 speechRecognizer.startListening(speechIntent)
             }
         }
@@ -62,33 +65,61 @@ class KhabriTaskActivity : AppCompatActivity(), RecognitionListener {
                 binding.title.text = "English"
                 speechIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "en-IN")
                 textToSpeech.language = Locale("en", "IN")
+                var _voiceName = "en-in-x-ene-local"
+                var selectedVoice =  textToSpeech.voice
+                for (tmpVoice in textToSpeech.getVoices()) {
+                    Log.d("zzz", "Voices : " + tmpVoice.name)
+                    if (tmpVoice.name == _voiceName) {
+                        selectedVoice = tmpVoice
+                        Log.d("zzz", "Voices : " + selectedVoice)
+                        break
+                    }
+                }
+                textToSpeech.voice = selectedVoice
             } else {
                 binding.title.text = "Hindi"
                 speechIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "hi-IN")
                 textToSpeech.language = Locale("hi", "IN")
+                var _voiceName = "hi-in-x-hid-local"
+                var selectedVoice =  textToSpeech.voice
+                for (tmpVoice in textToSpeech.getVoices()) {
+                    Log.d("zzz", "Voices : " + tmpVoice.name)
+                    if (tmpVoice.name == _voiceName) {
+                        selectedVoice = tmpVoice
+                        Log.d("zzz", "Voices : " + selectedVoice)
+                        break
+                    }
+                }
+                textToSpeech.voice = selectedVoice
             }
 
         }
 
         binding.juicerMixerDesignRefV2.answer.movementMethod = ScrollingMovementMethod()
 
-       /* val recyclerview = findViewById<RecyclerView>(R.id.questionlist)
-        recyclerview.layoutManager = LinearLayoutManager(this)
         val data = QuestionDemo.getQuestionList()
-        val adapter = QuestionsAdapter(data)
-        recyclerview.adapter = adapter
+        var questions = ""
+        var sNo = 1
+        data.forEach{
+            questions = questions + sNo + ". " + it.question + "?\n"
+            sNo++
+        };
 
-        binding.answer.setMovementMethod(ScrollingMovementMethod())
+        binding.question.setMovementMethod(ScrollingMovementMethod())
 
-        binding.seeQuestions.setOnClickListener { buttonView ->
-            binding.airpurifierIcon.visibility = View.GONE
-            binding.answer.text = ""
-            binding.downArrow.visibility = View.GONE
-            binding.Instruction.visibility = View.GONE
-            binding.productName.visibility = View.GONE
-            binding.questionlist.visibility = View.VISIBLE
+        binding.searchIcon.setOnClickListener { buttonView ->
 
-        }*/
+            if(binding.question.visibility == View.GONE) {
+                binding.question.visibility = View.VISIBLE
+                binding.questionbase.visibility = View.VISIBLE
+                binding.question.text = questions
+            } else {
+                binding.question.visibility = View.GONE
+                binding.questionbase.visibility = View.GONE
+                binding.question.text = ""
+            }
+
+        }
 
     }
 
@@ -99,7 +130,18 @@ class KhabriTaskActivity : AppCompatActivity(), RecognitionListener {
             // if No error is found then only it will run
             if (i != TextToSpeech.ERROR) {
                 // To Choose language of speech
-                textToSpeech.language = Locale("hi", "IN")
+                textToSpeech.language = Locale("en", "IN")
+                var _voiceName = "en-in-x-ene-local"
+                var selectedVoice =  textToSpeech.voice
+                for (tmpVoice in textToSpeech.getVoices()) {
+                    Log.d("zzz", "Voices : " + tmpVoice.name)
+                    if (tmpVoice.name == _voiceName) {
+                        selectedVoice = tmpVoice
+                        Log.d("zzz", "Voices : " + selectedVoice)
+                        break
+                    }
+                }
+                textToSpeech.voice = selectedVoice
             } 
         }
         class speechListener : UtteranceProgressListener() {

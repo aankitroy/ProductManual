@@ -20,10 +20,21 @@ class MainActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        val intent = Intent(this, KhabriTaskActivity::class.java)
         binding.mainScreen.setOnClickListener{
-            val intent = Intent(this, KhabriTaskActivity::class.java)
             startActivity(intent)
         }
+
+        Thread {
+            try {
+                Thread.sleep(1500)
+            } catch (e: InterruptedException) {
+                e.printStackTrace()
+            } finally {
+                startActivity(intent)
+                finish()
+            }
+        }.start()
     }
 
 

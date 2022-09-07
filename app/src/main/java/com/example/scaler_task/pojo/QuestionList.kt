@@ -61,128 +61,9 @@ object QuestionDemo {
             answer ="Touch and hold the child lock button for 3 seconds to activate child lock » The child lock icon displays on the screen. » When the child lock is on, all the other buttons are not responsive.\n" +
                     "2 Touch and hold the child lock button for 3 seconds again to deactivate the child lock. » The child lock icon disappears"
         }
+
+
         val questions6 = Questions().apply {
-            question = "What are the features of a Food Processor"
-            answer ="Following are the features-\n" +
-                    "• Extra powerful motor \n" +
-                    "• Overload protector to protect the motor from burnout \n" +
-                    "• Unbreakable FP bowl/cover \n" +
-                    "• Safety switch for the safe operation of FP bowl & jars \n" +
-                    "• Fruit Filter \n" +
-                    "• Citrus & Centrifugal juicer attachment\n" +
-                    " • Cord storage attachment"
-        }
-        val questions7 = Questions().apply {
-            question = "What are the parts offered by Food Processor"
-            answer ="Following are the parts-\n" +
-                    "A. Main Unit \n" +
-                    "1. Basic Unit \n" +
-                    "2. Rotary Switch \n" +
-                    "3. Processor Spindle \n" +
-                    "4. Over Load Indicator \n" +
-                    "5. Power Indicator \n" +
-                    "6. Reset Button \n" +
-                    "7. Whipping Switch \n" +
-                    "8. Safety Cover \n" +
-                    "9. Safety Knob \n" +
-                    "10. Spatula \n" +
-                    "B. Bowl Assembly \n" +
-                    "11. Bowl \n" +
-                    "12. Bowl Lid \n" +
-                    "13. Feeder Tube \n" +
-                    "14. Food Pusher \n" +
-                    "15. Spindle Extension [Type Al\n" +
-                    "C. Blade Attachment \n" +
-                    "16. Kneading Blade \n" +
-                    "17. Chopping Blade \n" +
-                    "18. Blade Holder \n" +
-                    "19. Shredding Blade [Fine] \n" +
-                    "20. Shredding Blade [Course) \n" +
-                    "21. Slicing Blade \n" +
-                    "22. French Fries Blade \n" +
-                    "D. Multipurpose jar (1000 ml) \n" +
-                    "23. MP jar \n" +
-                    "24. Ring\n" +
-                    "25. Jar Lid \n" +
-                    "26. Handle \n" +
-                    "E. Blending jar (1500 ml) \n" +
-                    "27. Jar \n" +
-                    "28. Jar Lid \n" +
-                    "29. Fruit Filter \n" +
-                    "30. Bush Plate Assembly \n" +
-                    "31. Socket F. \n" +
-                    "32. Chutney Jar \n" +
-                    "34. Lid G. Juicer\n" +
-                    "35. Citrus Bowl \n" +
-                    "36. Spindle Extension (Type Bl) \n" +
-                    "37. Citrus Cone \n" +
-                    "38. Centrifugal Juicer\n" +
-                    "39. Juicer Mesh \n" +
-                    "40. Juicer Lid \n" +
-                    "41. Pusher "
-        }
-        val questions8 = Questions().apply {
-            question = "What are the steps for Kneading and Chopping"
-            answer ="Ensure that the food processor unit is unplugged from the power supply.\n" +
-                    "2. Insert the safety cover into the processor body aligning the marking on the safety cover with the marking on the processor body.\n" +
-                    "3. Turn the safety cover clockwise firmly until it clicks into place and Marking on the safety cover and marking on the processor body are aligned.\n" +
-                    "Note: The food processor will not operate unless the safety cover is fitted in its place \n" +
-                    "4. Place the processor bowl onto the processor body aligning the marking on the processor bowl with the marking on the processor body. \n" +
-                    "5. Turn the processor bowl clockwise firmly until it clicks into place and mark on the processor bowl respectively are aligned. \n" +
-                    "6. When the processor bowl is fitted correctly, the processor bowl handle will be to the right of the food processor assembly. \n" +
-                    "7. Place spindle extension [Type Al over the processor spindle. Insert the required blade on to the spindle extension. \n" +
-                    "8. Fill in the flour/vegetable in the processor bowl. \n" +
-                    "9. Holding the processor bowl lid by the feeder tube fit the lid on the processor bowl and rotate clockwise till the protruding lid tab has clicked into place and the marking [e/ &) are aligned. \n" +
-                    "10. Plug in the processor. \n" +
-                    "11. Run the Processor at speeds 1& 2. \n" +
-                    "12. Add water gradually through the feeder tube till dough forms into a rounded lump.[ln case of Kneading). \n" +
-                    "13. Allow it to run for 10 to 15 seconds, or till the desired consistency is achieved. \n" +
-                    "14. To remove the dough vegetables stop the processor, press the safety knob and hold the process's handle firmly and turn anticlockwise to unlock. \n" +
-                    "15. Lift the processor bowl and unlock the processor lid. \n" +
-                    "16. Remove the dough vegetables from the processor bowl; use a spatula if required. \n" +
-                    "Notes: \n" +
-                    "1. The food processor will not operate unless the safety cover is fitted in its place and the processor lid is locked. \n" +
-                    "2. To achieve the best kneading action; apply light edible oil to the inside surface of the food processor bowl. For chopping operation please use a chopping blade instead of a kneading blade as mentioned in the figure. All relevant operations shall remain the same"
-        }
-        val questions9 = Questions().apply {
-            question = "What are the steps to operate Citrus Juicer"
-            answer ="Ensure that the processor is unplugged from the power supply. \n" +
-                    "2. Insert the safety cover into the processor body aligning marking (T) on the safety cover with (•) marking on the processor body. \n" +
-                    "3. Turn the safety cover clockwise firmly until it clicks into place and mark (•)on the safety cover and(•) on the processor body are aligned. \n" +
-                    "Note: the food processor will not operate unless the safety cover is fitted in its place.\n" +
-                    "4. Place the processor bowl onto the processor body aligning (T) marking on the processor bowl with (•) marking on the processor body. \n" +
-                    "5. Turn the processor bowl clockwise firmly until it clicks into place and (e & •) marking on the processor bowl and the Processor body respectively are aligned.\n" +
-                    "6. When the processor bowl is fitted correctly, the processor bowl handle will be to the right of the food processor assembly. \n" +
-                    "7. Place spindle extension (type B) over the processor spindle. \n" +
-                    "8. Fit the citrus bowl into the processor bowl. \n" +
-                    "9. Rotate the citrus bowl clockwise till the protruding lid tab has clicked into place and the markings (•!•) are aligned. \n" +
-                    "10. Insert the citrus cone into the off-centered spindle. \n" +
-                    "11. Plug in the processor. \n" +
-                    "12. Place half-cut sweet limes on the citrus cone and hold with a cupped hand. \n" +
-                    "13. Run the processor at the minimum speed only. \n" +
-                    "14. The juice will be collected in the processor bowl. \n" +
-                    "15. The seeds and the pulp will accumulate in the citrus bowl. \n" +
-                    "16. Remove the seeds and the pulp as and when it gets filled. \n" +
-                    "17. To remove the juice, stop the processor, press the safety knob and hold the processor handle firmly, and turn anticlockwise to unlock. \n" +
-                    "18. Lift the processor bowl and unlock the citrus press bowl. \n" +
-                    "19. Remove the citrus cone, citrus press bowl, and then the juice from the processor bowl and store in a container. \n" +
-                    "NOTE: \n" +
-                    "1. Operate the juice at minimum speed. \n" +
-                    "2. Pulp and seeds must be removed before it starts spilling under the citrus cone. Empty the seeds and pulp regularly"
-        }
-
-        val questions10 = Questions().apply {
-            question = "What is Over Load Protetor(OLP)"
-            answer ="The OLP is provided in the food processor to protect the motor from burning. \n" +
-                    "• When the jar is filled more than what is specified or the liquid is too viscous, the OLP trip indicator illuminates, and the motor steps automatically.\n" +
-                    "• When this happens, reduce the quantity of ingredients being ground or add some water. \n" +
-                    "• To restart, wait for a while and press the reset button of OLP and then start the processor again. \n" +
-                    "NOTE: \n" +
-                    "1. The grinder jar will not operate unless the processor bowl is fitted in its place and the processor is locked. \n" +
-                    "2. Caution: the stainless steel blades are very sharp, take extreme care while handling"
-        }
-
-        val questions11 = Questions().apply {
             question = "स्थापना प्रक्रिया क्या है"
             answer ="फिल्टर लगाने से पहले सुनिश्चित करें कि एयर प्यूरिफायर बिजली के आउटलेट से अनप्लग है।\n" +
                     " • सुनिश्चित करें कि टैग के साथ फ़िल्टर का किनारा आपकी ओर इशारा कर रहा है।\n" +
@@ -192,7 +73,7 @@ object QuestionDemo {
                     "4) फिल्टर से सभी पैकेजिंग सामग्री को हटा दें।\n" +
                     "5) थिक फिल्टर (FY5185) को एयर प्यूरीफायर में और फिर थिन एक्टिव कार्बन फिल्टर (FY5182) में रखें।\n"
         }
-        val questions12 = Questions().apply {
+        val questions7 = Questions().apply {
             question = "वाई-फाई कनेक्शन कैसे स्थापित करें"
             answer ="ऐप स्टोर या Google Play से Philips \"क्लीन होम\" ऐप डाउनलोड और इंस्टॉल करें।\n" +
                     "2) एयर प्यूरीफायर का प्लग पावर सॉकेट में लगाएं और एयर प्यूरीफायर चालू करने के लिए टच करें। » वाई-फाई संकेतक पहली बार नारंगी को झपकाता है।\n" +
@@ -200,14 +81,14 @@ object QuestionDemo {
                     "4) \"क्लीन होम\" ऐप लॉन्च करें और \"कनेक्ट ए न्यू डिवाइस\" पर क्लिक करें या स्क्रीन के शीर्ष पर \"\" बटन दबाएं। एआई को जोड़ने के लिए ऑन-स्क्रीन निर्देशों का पालन करें\n"
         }
 
-        val questions13 = Questions().apply {
+        val questions8 = Questions().apply {
             question = "वाई-फाई कनेक्शन कैसे स्थापित करें"
             answer ="ऐप स्टोर या Google Play से Philips \"क्लीन होम\" ऐप डाउनलोड और इंस्टॉल करें।\n" +
                     "2) एयर प्यूरीफायर का प्लग पावर सॉकेट में लगाएं और एयर प्यूरीफायर चालू करने के लिए टच करें। » वाई-फाई संकेतक पहली बार नारंगी को झपकाता है।\n" +
                     "3) सुनिश्चित करें कि आपका स्मार्टफोन या टैबलेट आपके वाई-फाई नेटवर्क से सफलतापूर्वक जुड़ा है।\n" +
                     "4) \"क्लीन होम\" ऐप लॉन्च करें और \"कनेक्ट ए न्यू डिवाइस\" पर क्लिक करें या स्क्रीन के शीर्ष पर \"\" बटन दबाएं। एआई को जोड़ने के लिए ऑन-स्क्रीन निर्देशों का पालन करें\n"
         }
-        val questions14 = Questions().apply {
+        val questions9 = Questions().apply {
             question = "हम वाई-फाई कनेक्शन को कैसे रीसेट कर सकते हैं"
             answer ="यह तब लागू होता है जब डिफॉल्ट नेटवर्क जिससे आपका प्यूरीफायर जुड़ा है, बदल गया है।\n" +
                     " • जब आपका डिफॉल्ट नेटवर्क बदल जाए तो वाई-फाई कनेक्शन को रीसेट करें।\n" +
@@ -215,7 +96,7 @@ object QuestionDemo {
                     "2) एक साथ 3 सेकंड के लिए स्पर्श करें जब तक कि आप एक बीप न सुनें। » एयर प्यूरीफायर पेयरिंग मोड में चला जाता है। » वाई-फाई संकेतक नारंगी को झपकाता है।\n" +
                     "3) \"पहली बार वाई-फाई कनेक्शन सेट करना\" खंड में चरण 4-5 का पालन करें।\n"
         }
-        val questions15 = Questions().apply {
+        val questions10 = Questions().apply {
             question = "हम विभिन्न मोड कैसे सेट कर सकते हैं"
             answer ="अतिरिक्त संवेदनशील एलर्जेन मोड को आसपास की हवा में एलर्जेन के स्तर में एक छोटे से बदलाव पर भी प्रतिक्रिया करने के लिए डिज़ाइन किया गया है। • एलर्जेन मोड »स्वत: का चयन करने के लिए ऑटो मोड बटन को स्पर्श करें और स्क्रीन पर प्रदर्शित करें।\n" +
                     "प्रदूषण मोड\n" +
@@ -232,11 +113,6 @@ object QuestionDemo {
         questionList.add(questions8)
         questionList.add(questions9)
         questionList.add(questions10)
-        questionList.add(questions11)
-        questionList.add(questions12)
-        questionList.add(questions13)
-        questionList.add(questions14)
-        questionList.add(questions15)
         return questionList
     }
 }

@@ -7,40 +7,45 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/elipse"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:srcCompat="@drawable/ellipse1"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-67dp" />
-
-    <ImageView
         android:id="@+id/productmixer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/elipse"
+        android:layout_width="330dp"
+        android:layout_height="298dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/elipse"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/productmixer" />
-
-    <ImageView
-        android:id="@+id/prodserialNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productmixer"
-        app:srcCompat="@drawable/prodserialno" />
-
-    <ImageView
-        android:id="@+id/juicermixer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="580dp"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/juicermixer" />
+        app:layout_constraintVertical_bias="0.391"
+        app:srcCompat="@drawable/usha_mixer" />
+
+    <ImageView
+        android:id="@+id/usha_product"
+        android:layout_width="333dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="272dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.412"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/productmixer"
+        app:srcCompat="@drawable/usha_product_name" />
+
+    <ImageView
+        android:id="@+id/leftcircle"
+        android:layout_width="54dp"
+        android:layout_height="178dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="304dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/leftcircle" />
+
+    <ImageView
+        android:id="@+id/rightcircle"
+        android:layout_width="69dp"
+        android:layout_height="259dp"
+        android:layout_marginBottom="168dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/rightcircle" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,8 @@
     <string name="video_url">Video Url</string>
     <string name="instruct">Press Button to ask question</string>
     <string name="productName">Air Purifier C5659/20 Voice Assistant</string>
+    <string name="productType">Air Purifier</string>
+    <string name="productSerial">C5659/20</string>
     <string name="seeQuestions">Click to See Questions</string>
     <string name="philips">PHILIPS</string>
     <string name="audioManual">Audio Manual</string>
