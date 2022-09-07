@@ -43,16 +43,18 @@ class KhabriTaskActivity : AppCompatActivity(), RecognitionListener {
         initTextToSpeech()
         binding.listenContainer.setOnClickListener {
             if (checkPermission()) {
-                binding.startMessage.setImageResource(R.drawable.askmestopmessage)
                 binding.mic.setColorFilter(ContextCompat.getColor(this,
                     R.color.red))
                 // binding.answer.text = ""
                 textToSpeech.stop()
                 binding.juicerMixerDesignRef.visibility = View.VISIBLE
-                binding.instructPlaceHolder.visibility = View.VISIBLE
-                binding.startMessage.visibility = View.VISIBLE
+                binding.startMessage.visibility = View.GONE
+                binding.instructPlaceHolder.visibility = View.GONE
+                binding.serviceman.visibility = View.GONE
                 binding.juicerMixerDesignRefV2.root.visibility = View.GONE
                 binding.juicerMixerDesignRefV2.question.text = ""
+                binding.micOnText.visibility = View.VISIBLE
+                binding.listenInput.visibility = View.VISIBLE
                 speechRecognizer.startListening(speechIntent)
             }
         }
@@ -133,6 +135,7 @@ class KhabriTaskActivity : AppCompatActivity(), RecognitionListener {
             action = "android.speech.action.RECOGNIZE_SPEECH"
             putExtra("android.speech.extra.LANGUAGE_MODEL", "free_form")
             putExtra("android.speech.extra.MAX_RESULTS", 10)
+            putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true);
             putExtra("calling_package", application.opPackageName)
         }
     }
@@ -162,17 +165,28 @@ class KhabriTaskActivity : AppCompatActivity(), RecognitionListener {
 
     override fun onEndOfSpeech() {
         binding.juicerMixerDesignRef.visibility = View.VISIBLE
-        binding.instructPlaceHolder.visibility = View.VISIBLE
-        binding.startMessage.visibility = View.VISIBLE
         binding.juicerMixerDesignRefV2.root.visibility = View.GONE
         binding.juicerMixerDesignRefV2.question.text = ""
-
     }
 
     override fun onError(error: Int) {
         Log.d("zzz", "error : " + error)
+       onNotListening()
+    }
+
+    private fun onNotListening() {
+        micOffState()
+        binding.listenInput.visibility = View.GONE
+        binding.startMessage.visibility = View.VISIBLE
+        binding.instructPlaceHolder.visibility = View.VISIBLE
+        binding.serviceman.visibility = View.VISIBLE
+        binding.startMessage.setImageResource(R.drawable.askmeanything)
+    }
+
+    private fun micOffState() {
         binding.mic.setColorFilter(ContextCompat.getColor(this,
             R.color.black))
+        binding.micOnText.visibility = View.GONE
     }
 
 
@@ -181,9 +195,7 @@ class KhabriTaskActivity : AppCompatActivity(), RecognitionListener {
     }
 
     override fun onResults(results: Bundle) {
-        binding.startMessage.setImageResource(R.drawable.askmeanything)
-        binding.mic.setColorFilter(ContextCompat.getColor(this,
-            R.color.black))
+        micOffState()
         val stringArrayList: ArrayList<String>? =
             results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
         if (stringArrayList != null) {
@@ -193,17 +205,21 @@ class KhabriTaskActivity : AppCompatActivity(), RecognitionListener {
             }
         }
         if (stringArrayList != null) {
-            val question = stringArrayList.get(0);
-            binding.juicerMixerDesignRef.visibility = View.GONE
-            binding.instructPlaceHolder.visibility = View.GONE
-            binding.startMessage.visibility = View.GONE
-            binding.juicerMixerDesignRefV2.root.visibility = View.VISIBLE
-            searchInQuestionList(question)
+            val question = stringArrayList[0]
+            binding.listenInput.text = question
+            binding.title.postDelayed({
+                binding.juicerMixerDesignRef.visibility = View.GONE
+                binding.instructPlaceHolder.visibility = View.GONE
+                binding.startMessage.visibility = View.GONE
+                binding.juicerMixerDesignRefV2.root.visibility = View.VISIBLE
+                searchInQuestionList(question)
+            }, 1000) // add little delay to let user see final input
         }
     }
 
     override fun onPartialResults(partialResults: Bundle?) {
-
+        val results = partialResults?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
+        binding.listenInput.text = results?.last()
     }
 
     override fun onEvent(eventType: Int, params: Bundle?) {
@@ -258,6 +274,9 @@ class KhabriTaskActivity : AppCompatActivity(), RecognitionListener {
             binding.startMessage.visibility = View.VISIBLE
             binding.juicerMixerDesignRefV2.root.visibility = View.GONE
             binding.juicerMixerDesignRefV2.question.text = ""
+            binding.listenInput.text = ""
+            binding.listenInput.visibility = View.GONE
+            binding.serviceman.visibility = View.VISIBLE
         }
     }
 
@@ -268,6 +287,8 @@ class KhabriTaskActivity : AppCompatActivity(), RecognitionListener {
         binding.juicerMixerDesignRefV2.answer.visibility = View.VISIBLE
         binding.juicerMixerDesignRefV2.question.text = question + "?"
         binding.juicerMixerDesignRefV2.answer.text = answer
+        binding.listenInput.text = ""
+        binding.listenInput.visibility = View.GONE
         map.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, Math.random().toString());
         textToSpeech.speak(answer, TextToSpeech.QUEUE_FLUSH, map)
     }

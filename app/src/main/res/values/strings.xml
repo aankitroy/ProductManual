@@ -15,6 +15,7 @@
     <string name="seeQuestions">Click to See Questions</string>
     <string name="philips">PHILIPS</string>
     <string name="audioManual">Audio Manual</string>
+    <string name="mic_on_text">I\'m listening, click again to stop.</string>
 
 
 </resources>
