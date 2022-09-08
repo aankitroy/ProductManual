@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/background">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/negative_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="-.179" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/product_details_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent=".724"
+            app:layout_constraintTop_toBottomOf="@id/negative_top_guideline">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/product_details_top_offset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".24" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/ellipse1"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/question_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="35dp"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/searchIcon"
+                app:layout_constraintTop_toBottomOf="@id/product_details_top_offset"
+                tools:text="What is the installation process?" />
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="10dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/product_details_top_offset"
+                app:srcCompat="@drawable/ic_search" />
+
+            <ImageView
+                android:id="@+id/step_image"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:translationZ="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/question_text"
+                app:srcCompat="@drawable/product_mixer_grinder" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/step_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="31dp"
+            android:layout_marginTop="25dp"
+            tools:text="Step 1"
+            android:background="#80AAE8"
+            android:padding="4dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginHorizontal="31dp"
+            app:layout_constraintTop_toBottomOf="@id/product_details_container" />
+
+        <TextView
+            android:id="@+id/step_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="31dp"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/step_number"
+            app:layout_goneMarginLeft="31dp"
+            tools:text="Pull the back cover and remove it from the appliance" />
+
+        <ImageView
+            android:id="@+id/listenContainer"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="31dp"
+            android:layout_marginBottom="65dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/elipse_2" />
+
+        <ImageView
+            android:id="@+id/mic"
+            android:layout_width="70dp"
+            android:layout_height="57dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_pause"
+            android:translationZ="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/listenContainer"
+            app:layout_constraintLeft_toLeftOf="@+id/listenContainer"
+            app:layout_constraintRight_toRightOf="@+id/listenContainer"
+            app:layout_constraintTop_toTopOf="@+id/listenContainer" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

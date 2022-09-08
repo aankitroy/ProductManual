@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.scaler_task.R
-import com.example.scaler_task.pojo.Questions
+import com.example.scaler_task.pojo.Question
 
-class QuestionsAdapter(private val mList: List<Questions>) : RecyclerView.Adapter<QuestionsAdapter.ViewHolder>() {
+class QuestionsAdapter(private val mList: List<Question>) : RecyclerView.Adapter<QuestionsAdapter.ViewHolder>() {
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

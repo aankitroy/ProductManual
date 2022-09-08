@@ -16,6 +16,9 @@
     <string name="philips">PHILIPS</string>
     <string name="audioManual">Audio Manual</string>
     <string name="mic_on_text">I\'m listening, click again to stop.</string>
+    <string name="juicer_mixer_grinder">Juicer Mixer Grinder</string>
+    <string name="your_filter_is_now_installed">Your Filter is now installed!</string>
+    <string name="a_different_question_tap_the_mic_icon">A different question? Tap the mic icon</string>
 
 
 </resources>

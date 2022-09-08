@@ -10,9 +10,7 @@
         android:id="@+id/elipse"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srcCompat="@drawable/ellipse1"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-67dp" />
+        app:srcCompat="@drawable/ellipse1" />
 
     <ImageView
         android:id="@+id/productmixer"

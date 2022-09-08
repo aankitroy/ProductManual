@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/background">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/negative_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="-.296" />
+
+        <ImageView
+            android:id="@+id/product_image"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:paddingTop="29dp"
+            android:translationZ="4dp"
+            app:layout_constraintHeight_percent=".31"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/product_mixer_grinder" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/product_details_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent=".696"
+            app:layout_constraintTop_toBottomOf="@id/negative_top_guideline">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/product_details_top_offset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".42" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/ellipse1"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/product_details_top_offset"
+                app:srcCompat="@drawable/ic_search" />
+
+            <TextView
+                android:id="@+id/product_serial_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HL 7568/00"
+                android:textColor="#243047"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@id/product_name"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toLeftOf="@id/product_name"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:text="@string/juicer_mixer_grinder"
+                android:textAllCaps="true"
+                android:textColor="#243047"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias=".46"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/listen_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="51dp"
+            android:layout_marginTop="29dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/product_details_container"
+            tools:text="What is the install" />
+
+        <ImageView
+            android:id="@+id/listenContainer"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="31dp"
+            android:layout_marginBottom="65dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/elipse_2" />
+
+        <ImageView
+            android:id="@+id/mic"
+            android:layout_width="70dp"
+            android:layout_height="57dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_black_mic"
+            android:translationZ="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/listenContainer"
+            app:layout_constraintLeft_toLeftOf="@+id/listenContainer"
+            app:layout_constraintRight_toRightOf="@+id/listenContainer"
+            app:layout_constraintTop_toTopOf="@+id/listenContainer"
+            app:tint="@color/red" />
+
+        <TextView
+            android:id="@+id/mic_on_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:text="@string/mic_on_text"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/listenContainer"
+            app:layout_constraintLeft_toRightOf="@id/listenContainer"
+            app:layout_constraintTop_toTopOf="@id/listenContainer" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

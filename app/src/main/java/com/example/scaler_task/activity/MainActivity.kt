@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.mainScreen.setOnClickListener{
-            val intent = Intent(this, KhabriTaskActivity::class.java)
+            val intent = Intent(this, AudioManualActivity::class.java)
             startActivity(intent)
         }
     }

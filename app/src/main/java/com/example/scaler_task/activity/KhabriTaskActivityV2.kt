@@ -242,7 +242,7 @@ class KhabriTaskActivityV2 : AppCompatActivity(), RecognitionListener {
         var ismatch = false
         for (item in list.indices) {
             if ((Constants.similarity(list.get(item).question, query) > .7)) {
-                passAnswerInTTS(list.get(item).question, list.get(item).answer)
+//                passAnswerInTTS(list.get(item).question, list.get(item).answer)
                 ismatch = true
                 break;
             }
