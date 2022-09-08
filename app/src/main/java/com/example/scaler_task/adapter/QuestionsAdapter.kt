@@ -1,32 +1,37 @@
 package com.example.scaler_task.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewbinding.ViewBinding
 import com.example.scaler_task.R
+import com.example.scaler_task.databinding.ItemQuestionBinding
 import com.example.scaler_task.pojo.Question
 
-class QuestionsAdapter(private val mList: List<Question>) : RecyclerView.Adapter<QuestionsAdapter.ViewHolder>() {
+class QuestionsAdapter(
+    private val mList: List<Question>,
+    private val onQuestionClickListener: OnQuestionClickListener
+) : RecyclerView.Adapter<QuestionsAdapter.ViewHolder>() {
 
-    // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        // inflates the card_view_design view
-        // that is used to hold list item
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.questions, parent, false)
+        val binding: ItemQuestionBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),
+            R.layout.item_question, parent, false)
 
-        return ViewHolder(view)
+        return ViewHolder(binding)
     }
 
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-        val ItemsViewModel = mList[position]
+        val questionModel = mList[position]
 
         // sets the text to the textview from our itemHolder class
-        holder.textView.text = ItemsViewModel.question
+        holder.binding.textView.text = questionModel.question
+
+        holder.binding.textView.setOnClickListener {
+            onQuestionClickListener.onQuestionClicked(questionModel)
+        }
 
     }
 
@@ -36,7 +41,11 @@ class QuestionsAdapter(private val mList: List<Question>) : RecyclerView.Adapter
     }
 
     // Holds the views for adding it to image and text
-    class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
-        val textView: TextView = itemView.findViewById(R.id.textView)
+    class ViewHolder(val binding: ItemQuestionBinding) : RecyclerView.ViewHolder(binding.root) {
+
+    }
+
+    interface OnQuestionClickListener {
+        fun onQuestionClicked(question: Question)
     }
 }

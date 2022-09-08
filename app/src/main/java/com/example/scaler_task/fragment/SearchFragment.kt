@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.scaler_task.R
 import com.example.scaler_task.adapter.QuestionsAdapter
 import com.example.scaler_task.databinding.FragmentSearchBinding
+import com.example.scaler_task.pojo.Question
 import com.example.scaler_task.pojo.QuestionDemo
 import com.example.scaler_task.viewModel.AudioManualViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -52,7 +53,13 @@ class SearchFragment: Fragment() {
         binding.backButton.setOnClickListener {
             viewModel.hideSearchScreen()
         }
-        adapter = QuestionsAdapter(QuestionDemo.getQuestionList())
+        adapter = QuestionsAdapter(QuestionDemo.getQuestionList(), object : QuestionsAdapter.OnQuestionClickListener {
+            override fun onQuestionClicked(question: Question) {
+                viewModel.selectedQuestion = question
+                viewModel.hideSearchScreen()
+                viewModel.showAnswerScreen()
+            }
+        })
         binding.recyclerView.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
         binding.recyclerView.adapter = adapter
     }
