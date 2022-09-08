@@ -122,7 +122,7 @@ constructor(private val mainRepository: MainRepository, private val application:
 
     override fun onResults(bundle: Bundle?) {
         val results = bundle?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
-        result.value = results?.last()
+        result.value = results?.first()
         searchInQuestionList(result.value.toString())
     }
 
@@ -205,7 +205,7 @@ constructor(private val mainRepository: MainRepository, private val application:
 
     override fun onPartialResults(bundle: Bundle?) {
         val results = bundle?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
-        partialResult.value = results?.last()
+        partialResult.value = results?.first()
     }
 
     override fun onEvent(p0: Int, p1: Bundle?) {
