@@ -47,7 +47,7 @@ constructor(private val mainRepository: MainRepository, private val application:
     var currentAnswerStepIndex: Int = 0
     private var _currentAnswerStep: MutableLiveData<AnswerStep> = MutableLiveData<AnswerStep>()
     val currentAnswerStep: LiveData<AnswerStep> = _currentAnswerStep
-    var isSpeechPlaying: Boolean = false
+    var isSpeechPlaying:MutableLiveData<Boolean> =  MutableLiveData<Boolean>(false)
     var randomQuestion: Question? = null
     var selectedProduct: Product = Product.PhilipsAirPurifier
 
@@ -79,7 +79,7 @@ constructor(private val mainRepository: MainRepository, private val application:
         }
         class SpeechListener : UtteranceProgressListener() {
             override fun onDone(utteranceId: String?) {
-                isSpeechPlaying = false
+                isSpeechPlaying.postValue(false)
                 viewModelScope.launch(Dispatchers.Main) {
                     if (selectedQuestion != null) {
                         showNextStep()
@@ -88,12 +88,12 @@ constructor(private val mainRepository: MainRepository, private val application:
             }
 
             override fun onError(utteranceId: String?) {
-                isSpeechPlaying = false
+                isSpeechPlaying.postValue(false)
                 Log.d("zzz", "Speech error")
             }
 
             override fun onStart(utteranceId: String?) {
-                isSpeechPlaying = true
+                isSpeechPlaying.postValue(true)
                 Log.d("zzz", "Speech started")
             }
 
@@ -173,6 +173,7 @@ constructor(private val mainRepository: MainRepository, private val application:
     }
 
      fun showPreviousStep() {
+         pauseStep()
         currentAnswerStepIndex--
         if (currentAnswerStepIndex >= 0) {
             _currentAnswerStep.value = (selectedQuestion!!.answerSteps[currentAnswerStepIndex])
@@ -184,7 +185,7 @@ constructor(private val mainRepository: MainRepository, private val application:
 
     fun pauseStep() {
         textToSpeech.stop()
-        isSpeechPlaying = false
+        isSpeechPlaying.value = false
     }
 
     fun playStep() {

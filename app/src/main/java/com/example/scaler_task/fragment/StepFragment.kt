@@ -57,12 +57,19 @@ class StepFragment : Fragment() {
             binding.stepText.text = it.text
             binding.stepImage.setImageResource(it.image)
         }
-        binding.listenContainer.setOnClickListener {
-            if (viewModel.isSpeechPlaying) {
+
+        viewModel.isSpeechPlaying.observe(viewLifecycleOwner) {
+            if (it) {
+                binding.mic.setImageResource(R.drawable.ic_pause)
+            } else {
                 binding.mic.setImageResource(R.drawable.ic_play)
+            }
+        }
+
+        binding.listenContainer.setOnClickListener {
+            if (viewModel.isSpeechPlaying.value == true) {
                 viewModel.pauseStep()
             } else {
-                binding.mic.setImageResource(R.drawable.ic_pause)
                 viewModel.playStep()
             }
         }
