@@ -11,10 +11,7 @@ import com.example.scaler_task.R
 import com.example.scaler_task.databinding.ActivityMainBinding
 import com.example.scaler_task.viewModel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -25,18 +22,23 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
         val intent = Intent(this, AudioManualActivity::class.java)
+
+        val job = lifecycleScope.launch(Dispatchers.IO) {
+            delay(1500)
+            withContext(Dispatchers.Main) {
+                if (isActive) {
+                    startActivity(intent)
+                }
+            }
+        }
+
         binding.mainScreen.setOnClickListener {
+            job.cancel()
             startActivity(intent)
         }
 
-        lifecycleScope.launch(Dispatchers.IO) {
-            delay(1500)
-            withContext(Dispatchers.Main) {
-                startActivity(intent)
-                finish()
-            }
-        }
     }
 
 

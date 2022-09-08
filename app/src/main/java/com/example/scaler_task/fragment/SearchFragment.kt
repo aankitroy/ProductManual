@@ -7,8 +7,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.scaler_task.R
+import com.example.scaler_task.adapter.QuestionsAdapter
 import com.example.scaler_task.databinding.FragmentSearchBinding
+import com.example.scaler_task.pojo.QuestionDemo
 import com.example.scaler_task.viewModel.AudioManualViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -17,6 +21,7 @@ class SearchFragment: Fragment() {
 
     private val viewModel: AudioManualViewModel by activityViewModels()
     private lateinit var binding: FragmentSearchBinding
+    private lateinit var adapter: QuestionsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,6 +42,9 @@ class SearchFragment: Fragment() {
         binding.backButton.setOnClickListener {
             viewModel.hideSearchScreen()
         }
+        adapter = QuestionsAdapter(QuestionDemo.getQuestionList())
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
+        binding.recyclerView.adapter = adapter
     }
 
     companion object {

@@ -20,5 +20,14 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_back" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/recycler_view"
+            android:paddingVertical="14dp"
+            android:clipToPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/back_button"
+            android:layout_height="0dp"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

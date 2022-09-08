@@ -50,6 +50,9 @@ class AudioListenFragment : Fragment() {
             micOffState()
             binding.listenInput.text = it
         }
+        binding.searchIcon.setOnClickListener {
+            viewModel.showSearchScreen()
+        }
         binding.productImage.setImageResource(viewModel.selectedProduct.productImage)
         binding.productName.text = viewModel.selectedProduct.name
         binding.productSerialNo.text = viewModel.selectedProduct.serialNumber

@@ -42,6 +42,9 @@ class StepEndFragment: Fragment() {
             viewModel.selectedQuestion = viewModel.randomQuestion
             viewModel.showAnswerScreen()
         }
+        binding.searchIcon.setOnClickListener {
+            viewModel.showSearchScreen()
+        }
         binding.randomQuestion.text = viewModel.randomQuestion?.question
         binding.root.background = context?.drawable(viewModel.selectedProduct.screenBackground)
         binding.randomQuestion.setTextColor(requireActivity().color(viewModel.selectedProduct.askMeAnythingTextColor))
