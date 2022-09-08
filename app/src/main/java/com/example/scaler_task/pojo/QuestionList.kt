@@ -105,16 +105,45 @@ object QuestionDemo {
 //        }
 //
 //
-//        val questions6 = Questions().apply {
-//            question = "स्थापना प्रक्रिया क्या है"
-//            answer ="फिल्टर लगाने से पहले सुनिश्चित करें कि एयर प्यूरिफायर बिजली के आउटलेट से अनप्लग है।\n" +
-//                    " • सुनिश्चित करें कि टैग के साथ फ़िल्टर का किनारा आपकी ओर इशारा कर रहा है।\n" +
-//                    "1) वायु शोधक से निकालने के लिए साइड पैनल के शीर्ष भाग को खींचे।\n" +
-//                    "2) दो क्लिप को नीचे दबाएं (1) और प्री-फिल्टर को अपनी ओर खींचें (2)।\n" +
-//                    "3) सभी फिल्टर हटा दें।\n" +
-//                    "4) फिल्टर से सभी पैकेजिंग सामग्री को हटा दें।\n" +
-//                    "5) थिक फिल्टर (FY5185) को एयर प्यूरीफायर में और फिर थिन एक्टिव कार्बन फिल्टर (FY5182) में रखें।\n"
-//        }
+        val questions6 = Question().apply {
+            question = "स्थापना प्रक्रिया क्या है"
+            answerSteps.add(
+                AnswerStep(
+                    1,
+                    "वायु शोधक से निकालने के लिए साइड पैनल के शीर्ष भाग को खींचे।",
+                    R.drawable.mixer_grinder_step_1
+                )
+            )
+            answerSteps.add(
+                AnswerStep(
+                    2,
+                    "दो क्लिप को नीचे दबाएं (1) और प्री-फिल्टर को अपनी ओर खींचें (2)।",
+                    R.drawable.mixer_grinder_step_1
+                )
+            )
+            answerSteps.add(
+                AnswerStep(
+                    3,
+                    "सभी फिल्टर हटा दें।",
+                    R.drawable.mixer_grinder_step_2
+                )
+            )
+            answerSteps.add(
+                AnswerStep(
+                    4,
+                    "फिल्टर से सभी पैकेजिंग सामग्री को हटा दें।",
+                    R.drawable.mixer_grinder_step_1
+                )
+            )
+            answerSteps.add(
+                AnswerStep(
+                    5,
+                    "थिक फिल्टर (FY5185) को एयर प्यूरीफायर में और फिर थिन एक्टिव कार्बन फिल्टर (FY5182) में रखें।",
+                    R.drawable.mixer_grinder_step_1
+                )
+            )
+            lastScreenTitle = "आपका फ़िल्टर अब स्थापित हो गया है!"
+        }
 //        val questions7 = Questions().apply {
 //            question = "वाई-फाई कनेक्शन कैसे स्थापित करें"
 //            answer ="ऐप स्टोर या Google Play से Philips \"क्लीन होम\" ऐप डाउनलोड और इंस्टॉल करें।\n" +
@@ -150,7 +179,7 @@ object QuestionDemo {
 //        questionList.add(questions3)
 //        questionList.add(questions4)
 //        questionList.add(questions5)
-//        questionList.add(questions6)
+        questionList.add(questions6)
 //        questionList.add(questions7)
 //        questionList.add(questions8)
 //        questionList.add(questions9)
