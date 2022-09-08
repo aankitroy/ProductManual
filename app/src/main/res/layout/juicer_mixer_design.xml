@@ -10,35 +10,46 @@
         android:id="@+id/elipse"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srcCompat="@drawable/ellipse1" />
+        app:srcCompat="@drawable/ellipse1"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="-16dp" />
 
     <ImageView
         android:id="@+id/productmixer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="365dp"
+        android:layout_height="262dp"
         app:layout_constraintBottom_toBottomOf="@+id/elipse"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/elipse"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/productmixer" />
+        app:layout_constraintVertical_bias="0.499"
+        app:srcCompat="@drawable/airpurifierwithoutbg" />
 
-    <ImageView
-        android:id="@+id/prodserialNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productmixer"
-        app:srcCompat="@drawable/prodserialno" />
-
-    <ImageView
-        android:id="@+id/juicermixer"
+    <TextView
+        android:id="@+id/airpurifier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="580dp"
+        android:layout_marginTop="260dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/productType"
+        android:textAllCaps="true"
+        android:textColor="@color/dark_grey"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/juicermixer" />
+        app:layout_constraintTop_toTopOf="@+id/productmixer" />
+
+    <TextView
+        android:id="@+id/prodserialNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/dark_grey"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productmixer"
+        android:text="@string/productSerial"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

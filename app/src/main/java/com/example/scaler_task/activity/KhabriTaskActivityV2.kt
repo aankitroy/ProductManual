@@ -21,13 +21,14 @@ import androidx.databinding.DataBindingUtil
 import com.example.scaler_task.R
 import com.example.scaler_task.constants.Constants
 import com.example.scaler_task.databinding.ActivityKhabriTaskBinding
+import com.example.scaler_task.databinding.ActivityKhabriTaskV2Binding
 import com.example.scaler_task.pojo.QuestionDemo
 import java.util.*
 
 
 class KhabriTaskActivityV2 : AppCompatActivity(), RecognitionListener {
 
-    lateinit var binding: ActivityKhabriTaskBinding
+    lateinit var binding: ActivityKhabriTaskV2Binding
     lateinit var speechRecognizer: SpeechRecognizer
     lateinit var speechIntent: Intent
     lateinit var textToSpeech: TextToSpeech
@@ -38,20 +39,25 @@ class KhabriTaskActivityV2 : AppCompatActivity(), RecognitionListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_khabri_task)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_khabri_task_v2)
         initSpeech()
         initTextToSpeech()
+        binding.trienergyRef.visibility = View.VISIBLE
+        binding.instructPlaceHolder.visibility = View.VISIBLE
+        binding.startMessage.visibility = View.VISIBLE
+        binding.trienergyRefV2.root.visibility = View.GONE
+        binding.trienergyRefV2.question.text = ""
         binding.listenContainer.setOnClickListener {
             if (checkPermission()) {
-                binding.startMessage.setImageResource(R.drawable.askmestopmessage)
+                binding.startMessage.setImageResource(R.drawable.askmewhitestop)
                 binding.mic.setImageResource(R.drawable.red_mic)
                // binding.answer.text = ""
                 textToSpeech.stop()
-                binding.juicerMixerDesignRef.visibility = View.VISIBLE
+                binding.trienergyRef.visibility = View.VISIBLE
                 binding.instructPlaceHolder.visibility = View.VISIBLE
                 binding.startMessage.visibility = View.VISIBLE
-                binding.juicerMixerDesignRefV2.root.visibility = View.GONE
-                binding.juicerMixerDesignRefV2.question.text = ""
+                binding.trienergyRefV2.root.visibility = View.GONE
+                binding.trienergyRefV2.question.text = ""
                 speechRecognizer.startListening(speechIntent)
             }
         }
@@ -70,7 +76,7 @@ class KhabriTaskActivityV2 : AppCompatActivity(), RecognitionListener {
 
         }
 
-        binding.juicerMixerDesignRefV2.answer.movementMethod = ScrollingMovementMethod()
+        binding.trienergyRefV2.answer.movementMethod = ScrollingMovementMethod()
 
        /* val recyclerview = findViewById<RecyclerView>(R.id.questionlist)
         recyclerview.layoutManager = LinearLayoutManager(this)
@@ -104,11 +110,11 @@ class KhabriTaskActivityV2 : AppCompatActivity(), RecognitionListener {
         }
         class speechListener : UtteranceProgressListener() {
             override fun onDone(utteranceId: String?) {
-                binding.juicerMixerDesignRef.visibility = View.VISIBLE
+                binding.trienergyRef.visibility = View.VISIBLE
                 binding.instructPlaceHolder.visibility = View.VISIBLE
                 binding.startMessage.visibility = View.VISIBLE
-                binding.juicerMixerDesignRefV2.root.visibility = View.GONE
-                binding.juicerMixerDesignRefV2.question.text = ""
+                binding.trienergyRefV2.root.visibility = View.GONE
+                binding.trienergyRefV2.question.text = ""
 
             }
 
@@ -160,11 +166,11 @@ class KhabriTaskActivityV2 : AppCompatActivity(), RecognitionListener {
     }
 
     override fun onEndOfSpeech() {
-        binding.juicerMixerDesignRef.visibility = View.VISIBLE
+        binding.trienergyRef.visibility = View.VISIBLE
         binding.instructPlaceHolder.visibility = View.VISIBLE
         binding.startMessage.visibility = View.VISIBLE
-        binding.juicerMixerDesignRefV2.root.visibility = View.GONE
-        binding.juicerMixerDesignRefV2.question.text = ""
+        binding.trienergyRefV2.root.visibility = View.GONE
+        binding.trienergyRefV2.question.text = ""
 
     }
 
@@ -178,7 +184,7 @@ class KhabriTaskActivityV2 : AppCompatActivity(), RecognitionListener {
     }
 
     override fun onResults(results: Bundle) {
-        binding.startMessage.setImageResource(R.drawable.askmeanything)
+        binding.startMessage.setImageResource(R.drawable.askmewhite)
         binding.mic.setImageResource(R.drawable.black_mic)
         val stringArrayList: ArrayList<String>? =
             results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
@@ -190,10 +196,10 @@ class KhabriTaskActivityV2 : AppCompatActivity(), RecognitionListener {
         }
         if (stringArrayList != null) {
             val question = stringArrayList.get(0);
-            binding.juicerMixerDesignRef.visibility = View.GONE
+            binding.trienergyRef.visibility = View.GONE
             binding.instructPlaceHolder.visibility = View.GONE
             binding.startMessage.visibility = View.GONE
-            binding.juicerMixerDesignRefV2.root.visibility = View.VISIBLE
+            binding.trienergyRefV2.root.visibility = View.VISIBLE
             searchInQuestionList(question)
         }
     }
@@ -249,21 +255,20 @@ class KhabriTaskActivityV2 : AppCompatActivity(), RecognitionListener {
 
         }
         if(ismatch == false){
-            binding.juicerMixerDesignRef.visibility = View.VISIBLE
+            binding.trienergyRef.visibility = View.VISIBLE
             binding.instructPlaceHolder.visibility = View.VISIBLE
             binding.startMessage.visibility = View.VISIBLE
-            binding.juicerMixerDesignRefV2.root.visibility = View.GONE
-            binding.juicerMixerDesignRefV2.question.text = ""
+            binding.trienergyRefV2.root.visibility = View.GONE
+            binding.trienergyRefV2.question.text = ""
         }
     }
 
 
     private fun passAnswerInTTS(question: String, answer: String) {
-        binding.juicerMixerDesignRefV2.bigElipse.visibility = View.VISIBLE
-        binding.juicerMixerDesignRefV2.answerbase.visibility = View.VISIBLE
-        binding.juicerMixerDesignRefV2.answer.visibility = View.VISIBLE
-        binding.juicerMixerDesignRefV2.question.text = question + "?"
-        binding.juicerMixerDesignRefV2.answer.text = answer
+        binding.trienergyRefV2.answerbase.visibility = View.VISIBLE
+        binding.trienergyRefV2.answer.visibility = View.VISIBLE
+        binding.trienergyRefV2.question.text = question + "?"
+        binding.trienergyRefV2.answer.text = answer
         map.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, Math.random().toString());
         textToSpeech.speak(answer, TextToSpeech.QUEUE_FLUSH, map)
     }

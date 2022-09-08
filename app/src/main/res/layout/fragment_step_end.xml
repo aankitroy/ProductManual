@@ -104,6 +104,7 @@
             android:textColor="@color/black"
             android:textSize="22sp"
             android:textStyle="bold"
+            android:id="@+id/different_question_tip"
             android:layout_marginTop="20dp"
             android:text="@string/a_different_question_tap_the_mic_icon"
             app:layout_constraintLeft_toLeftOf="parent"

@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.scaler_task.R
+import com.example.scaler_task.common.color
+import com.example.scaler_task.common.drawable
 import com.example.scaler_task.databinding.FragmentAudioListenBinding
 import com.example.scaler_task.viewModel.AudioManualViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -48,6 +50,12 @@ class AudioListenFragment : Fragment() {
             micOffState()
             binding.listenInput.text = it
         }
+        binding.productImage.setImageResource(viewModel.selectedProduct.productImage)
+        binding.productName.text = viewModel.selectedProduct.name
+        binding.productSerialNo.text = viewModel.selectedProduct.serialNumber
+        binding.root.background = context?.drawable(viewModel.selectedProduct.screenBackground)
+        binding.micOnText.setTextColor(requireActivity().color(viewModel.selectedProduct.askMeAnythingTextColor))
+        binding.listenInput.setTextColor(requireActivity().color(viewModel.selectedProduct.askMeAnythingTextColor))
     }
 
     private fun micOffState() {

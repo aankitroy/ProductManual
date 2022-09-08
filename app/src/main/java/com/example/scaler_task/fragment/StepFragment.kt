@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.scaler_task.R
+import com.example.scaler_task.common.color
+import com.example.scaler_task.common.drawable
 import com.example.scaler_task.databinding.FragmentStepBinding
 import com.example.scaler_task.viewModel.AudioManualViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -17,6 +20,20 @@ class StepFragment : Fragment() {
 
     private val viewModel: AudioManualViewModel by activityViewModels()
     private lateinit var binding: FragmentStepBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        activity?.onBackPressedDispatcher?.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if(viewModel.currentAnswerStepIndex >= 0) {
+                    viewModel.showPreviousStep()
+                }else{
+                    isEnabled = false
+                    activity?.onBackPressed()
+                }
+            }
+        })
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,6 +66,8 @@ class StepFragment : Fragment() {
                 viewModel.playStep()
             }
         }
+        binding.root.background = context?.drawable(viewModel.selectedProduct.screenBackground)
+        binding.stepText.setTextColor(requireActivity().color(viewModel.selectedProduct.askMeAnythingTextColor))
     }
 
     companion object {

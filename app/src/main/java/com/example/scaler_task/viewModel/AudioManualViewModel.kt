@@ -19,10 +19,7 @@ import com.example.scaler_task.R
 import com.example.scaler_task.common.SingleLiveEvent
 import com.example.scaler_task.constants.Constants
 import com.example.scaler_task.fragment.*
-import com.example.scaler_task.pojo.AnswerStep
-import com.example.scaler_task.pojo.FragmentChange
-import com.example.scaler_task.pojo.Question
-import com.example.scaler_task.pojo.QuestionDemo
+import com.example.scaler_task.pojo.*
 import com.example.scaler_task.repository.MainRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -52,6 +49,7 @@ constructor(private val mainRepository: MainRepository, private val application:
     val currentAnswerStep: LiveData<AnswerStep> = _currentAnswerStep
     var isSpeechPlaying: Boolean = false
     var randomQuestion: Question? = null
+    var selectedProduct: Product = Product.PhilipsAirPurifier
 
     init {
         initSpeech()
@@ -171,6 +169,16 @@ constructor(private val mainRepository: MainRepository, private val application:
             playStep()
         } else if (currentAnswerStepIndex == selectedQuestion!!.answerSteps.size) {
             showStepEndScreen()
+        }
+    }
+
+     fun showPreviousStep() {
+        currentAnswerStepIndex--
+        if (currentAnswerStepIndex >= 0) {
+            _currentAnswerStep.value = (selectedQuestion!!.answerSteps[currentAnswerStepIndex])
+            playStep()
+        } else {
+            showStartFragment()
         }
     }
 

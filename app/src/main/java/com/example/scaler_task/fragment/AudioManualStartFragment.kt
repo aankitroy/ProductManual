@@ -15,6 +15,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.scaler_task.R
+import com.example.scaler_task.common.color
+import com.example.scaler_task.common.drawable
 import com.example.scaler_task.databinding.FragmentAudioManualStartBinding
 import com.example.scaler_task.viewModel.AudioManualViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -57,6 +59,15 @@ class AudioManualStartFragment : Fragment() {
         binding.searchIcon.setOnClickListener {
             viewModel.showSearchScreen()
         }
+
+        binding.productImage.setImageResource(viewModel.selectedProduct.productImage)
+        binding.productName.text = viewModel.selectedProduct.name
+        binding.productSerialNo.text = viewModel.selectedProduct.serialNumber
+        binding.askMeAnything.text = viewModel.selectedProduct.askMeAnythingText
+        binding.root.background = context?.drawable(viewModel.selectedProduct.screenBackground)
+        binding.askMeAnything.setTextColor(requireActivity().color(viewModel.selectedProduct.askMeAnythingTextColor))
+        binding.askMeAnything.background = context?.drawable(viewModel.selectedProduct.textBubbleBackground)
+        binding.serviceMan.setImageResource(viewModel.selectedProduct.serviceManImage)
     }
 
     private fun setListeners() {

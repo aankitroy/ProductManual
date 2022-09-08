@@ -124,6 +124,7 @@
             android:layout_marginTop="40dp"
             android:background="@drawable/text_bubble_grey"
             android:padding="9dp"
+            android:id="@+id/ask_me_anything"
             android:text="Ask me anything about your Philips Product!\n\nJust press the mic icon and speak your question."
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -155,7 +156,11 @@
 
         <ImageView
             android:layout_width="wrap_content"
+            app:layout_constraintHorizontal_bias="1"
             android:layout_height="0dp"
+            android:scaleType="fitEnd"
+            app:layout_constraintHeight_percent=".4"
+            android:id="@+id/service_man"
             android:src="@drawable/service_man"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent" />

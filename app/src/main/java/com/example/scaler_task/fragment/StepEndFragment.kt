@@ -8,6 +8,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.scaler_task.R
+import com.example.scaler_task.common.color
+import com.example.scaler_task.common.drawable
 import com.example.scaler_task.databinding.FragmentStepEndBinding
 import com.example.scaler_task.viewModel.AudioManualViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -41,6 +43,10 @@ class StepEndFragment: Fragment() {
             viewModel.showAnswerScreen()
         }
         binding.randomQuestion.text = viewModel.randomQuestion?.question
+        binding.root.background = context?.drawable(viewModel.selectedProduct.screenBackground)
+        binding.randomQuestion.setTextColor(requireActivity().color(viewModel.selectedProduct.askMeAnythingTextColor))
+        binding.differentQuestionTip.setTextColor(requireActivity().color(viewModel.selectedProduct.askMeAnythingTextColor))
+
     }
 
     companion object {
