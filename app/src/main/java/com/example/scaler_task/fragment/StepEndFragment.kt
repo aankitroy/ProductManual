@@ -49,7 +49,7 @@ class StepEndFragment: Fragment() {
         binding.root.background = context?.drawable(viewModel.selectedProduct.screenBackground)
         binding.randomQuestion.setTextColor(requireActivity().color(viewModel.selectedProduct.askMeAnythingTextColor))
         binding.differentQuestionTip.setTextColor(requireActivity().color(viewModel.selectedProduct.askMeAnythingTextColor))
-
+        binding.questionText.text = viewModel.selectedQuestion?.lastScreenTitle
     }
 
     companion object {

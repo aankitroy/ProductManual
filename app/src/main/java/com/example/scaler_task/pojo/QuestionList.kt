@@ -8,43 +8,29 @@ object QuestionDemo {
     fun getQuestionList(): ArrayList<Question> {
         val questionList: ArrayList<Question> = ArrayList()
         val question1 = Question().apply {
-            question = "What is the Installation Process"
+            question = "How to clean the particle sensor"
             answerSteps.add(
                 AnswerStep(
                     1,
-                    "Pull the back cover and remove it from the appliance.",
-                    R.drawable.mixer_grinder_step_1
+                    "Pull the back cover and remove it from the appliance",
+                    R.drawable.mixer_grinder_step_1_v2
                 )
             )
             answerSteps.add(
                 AnswerStep(
                     2,
-                    "Pull the filter from the appliance.",
-                    R.drawable.mixer_grinder_step_1
+                    "Clean the particle sensor with a cotton swab",
+                    R.drawable.mixer_grinder_step_2_v2
                 )
             )
             answerSteps.add(
                 AnswerStep(
                     3,
-                    "Remove all packaging materials of the air purification filter.",
-                    R.drawable.mixer_grinder_step_2
+                    "Re-attach the back cover",
+                    R.drawable.mixer_grinder_step_3_v2
                 )
             )
-            answerSteps.add(
-                AnswerStep(
-                    4,
-                    "Put the filter back into the appliance.",
-                    R.drawable.mixer_grinder_step_1
-                )
-            )
-            answerSteps.add(
-                AnswerStep(
-                    5,
-                    "Reattach the back cover.",
-                    R.drawable.mixer_grinder_step_1
-                )
-            )
-            lastScreenTitle = "Your Filter is now installed!"
+            lastScreenTitle = "Your particle sensor is cleaned now!"
         }
 
 //            val questions1 = Questions().apply {
@@ -105,7 +91,7 @@ object QuestionDemo {
 //        }
 //
 //
-        val questions6 = Question().apply {
+        val question2 = Question().apply {
             question = "स्थापना प्रक्रिया क्या है"
             answerSteps.add(
                 AnswerStep(
@@ -144,6 +130,126 @@ object QuestionDemo {
             )
             lastScreenTitle = "आपका फ़िल्टर अब स्थापित हो गया है!"
         }
+
+        val question3 = Question().apply {
+            question = "How to clean the surface of the filter?"
+            answerSteps.add(
+                AnswerStep(
+                    1,
+                    "Pull the back cover and remove it from the appliance",
+                    R.drawable.mixer_grinder_step_1_v2
+                )
+            )
+            answerSteps.add(
+                AnswerStep(
+                    2,
+                    "Pull the filter from the appliance",
+                    R.drawable.mixer_grinder_open_v2
+                )
+            )
+            answerSteps.add(
+                AnswerStep(
+                    3,
+                    "Clean the surface of the filter with a vacuum cleaner",
+                    R.drawable.mixer_clean_surface_v2
+                )
+            )
+
+            answerSteps.add(
+                AnswerStep(
+                    4,
+                    "Pull the filter back into the appliance",
+                    R.drawable.mixer_filter_back_v2
+                )
+            )
+            lastScreenTitle = "Your filter is cleaned now!"
+        }
+
+        val question4 = Question().apply {
+            question = "How to change the day mode setting?"
+            answerSteps.add(
+                AnswerStep(
+                    1,
+                    "Auto mode : In Auto mode, the dual-sensor senses the air quality in real-time and the appliance automatically adjusts the fan speed in accordance with the ambient air quality. The control panel can automatically adjust display screen brightness according to the ambient light.",
+                    R.drawable.daymode_setting_step_1
+                )
+            )
+            answerSteps.add(
+                AnswerStep(
+                    2,
+                    "Manual Speed : In manual mode, the Air Purifier operates on Speed 1 or Speed 2.",
+                    R.drawable.daymode_setting_step_2
+                )
+            )
+            answerSteps.add(
+                AnswerStep(
+                    3,
+                    "Turbo mode : In Turbo mode, the air purifier operates on the highest speed.",
+                    R.drawable.daymode_setting_step_3
+                )
+            )
+            lastScreenTitle = "Your day mode setting is changed now!"
+        }
+
+        val question5 = Question().apply {
+            question = "How to reset the filter?"
+            answerSteps.add(
+                AnswerStep(
+                    1,
+                    "Put the power plug back in to the socket",
+                    R.drawable.reset_step_1
+                )
+            )
+            answerSteps.add(
+                AnswerStep(
+                    2,
+                    "Within 15 Seconds after Power on, touch and hold and button for 3 seconds to Reset the filter lifetime counter.\n",
+                    R.drawable.reset_step_2
+                )
+            )
+            lastScreenTitle = "Your filter is reset now!"
+        }
+
+        val question6 = Question().apply {
+            question = "What is the installation process?"
+            answerSteps.add(
+                AnswerStep(
+                    1,
+                    "Pull the back cover and remove it from the appliance.",
+                    R.drawable.step_1
+                )
+            )
+            answerSteps.add(
+                AnswerStep(
+                    2,
+                    "Pull the filter from the appliance",
+                    R.drawable.step_2
+                )
+            )
+            answerSteps.add(
+                AnswerStep(
+                    3,
+                    "Remove all packaging materials from the air purification filter",
+                    R.drawable.step_3
+                )
+            )
+            answerSteps.add(
+                AnswerStep(
+                    4,
+                    "Put the filter back into the appliance",
+                    R.drawable.step_4
+                )
+            )
+            answerSteps.add(
+                AnswerStep(
+                    5,
+                    "Reattach the back cover",
+                    R.drawable.step_5
+                )
+            )
+            lastScreenTitle = "Your filter is installed now!"
+        }
+
 //        val questions7 = Questions().apply {
 //            question = "वाई-फाई कनेक्शन कैसे स्थापित करें"
 //            answer ="ऐप स्टोर या Google Play से Philips \"क्लीन होम\" ऐप डाउनलोड और इंस्टॉल करें।\n" +
@@ -179,7 +285,11 @@ object QuestionDemo {
 //        questionList.add(questions3)
 //        questionList.add(questions4)
 //        questionList.add(questions5)
-        questionList.add(questions6)
+        questionList.add(question2)
+        questionList.add(question3)
+        questionList.add(question4)
+        questionList.add(question5)
+        questionList.add(question6)
 //        questionList.add(questions7)
 //        questionList.add(questions8)
 //        questionList.add(questions9)
